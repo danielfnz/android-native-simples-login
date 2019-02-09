@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SimplesLogin</string>
     <!-- Strings related to login -->
+    <string name="error_connection">Erro ao tentar logar. Verifique sua conexão com a internet.</string>
+    <string name="error_request">Algo de errado aconteceu.</string>
+    <string name="label_error_invalid_response">Resposta inválida.</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
