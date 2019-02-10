@@ -1,6 +1,7 @@
 package br.com.danielfnz.simpleslogin.services;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.greenrobot.eventbus.EventBus;
 import org.json.JSONException;
@@ -19,14 +20,16 @@ public class LoginService extends WebTaskBase{
     private String email;
     private String password;
 
-    public LoginService(Context context, String serviceURL, String email, String password) {
-        super(context, serviceURL);
+    public LoginService(Context context,  String email, String password) {
+        super(context, ENDPOINT);
         this.email = email;
         this.password = password;
     }
 
     @Override
     public void handleResponse(String response) {
+        Log.i("teste", response);
+        System.out.print(response);
         try {
             JSONObject responseJSON = new JSONObject(response);
 
@@ -46,6 +49,7 @@ public class LoginService extends WebTaskBase{
 
     @Override
     public String getRequestBody() {
+        Log.i("teste", "getRequestBody");
         Map<String,String> requestMap = new HashMap<>();
         requestMap.put("email", email);
         requestMap.put("password", password);
